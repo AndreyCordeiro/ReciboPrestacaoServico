@@ -11,9 +11,151 @@
     <div class="main">
         <h1 class="titulo">Recibo de Prestação de Serviço</h1>
 
-        <div class="colum">
-            <h1>Valor</h1>
-            <input type="text">
+        <div>
+            <label class="label-valor">Valor:</label>
+            <div>
+                <input type="text" placeholder="00,00">
+            </div>
+            <p>Valor recebido</p>
+        </div>
+        <div>
+            <label class="label-valor">Nº do recibo:(opcional)</label>
+            <div>
+                <input type="text">
+            </div>
+            <p>Ex.: 001/2018</p>
+        </div>
+        <div>
+            <label class="label-valor">Contratante</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">CPF ou CNPJ (opcional):</label>
+            <div>
+                <input type="text">
+            </div>
+            <p>Somente números</p>
+        </div>
+        <div>
+            <label class="label-valor">Referente à:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Cidade:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Data:</label>
+            <div>
+                <input type="text" placeholder="pegar a data do dia">
+            </div>
+        </div>
+        <hr>
+        <b>DADOS DO PRESTADOR DE SERVIÇO</b>
+        <hr>
+        <div>
+            <label class="label-valor">Nome do Prestador de Serviço:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Endereço:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Número:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Bairro:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Cidade:</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Estado:</label>
+            <div>
+                <select name="estado">
+                    <option selected="" value="">Selecione o Estado...</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">CEP:</label>
+            <div>
+                <input type="text" placeholder="00000-000">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">Telefone (opcional):</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div>
+            <label class="label-valor">CPF ou CNPJ (opcional):</label>
+            <div>
+                <input type="text">
+            </div>
+        </div>
+        <div class="field m-t-20">
+            <label for="pagamento" class="label">Forma de Pagamento:</label>
+            <div class="control">
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="dinheiro" checked="">Dinheiro</label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="pix">Pix</label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="cheque">Cheque</label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="transferencia">Transferência/Depósito</label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="cartao">Cartão de Crédito/Débito</label>
+            </div>
         </div>
     </div>
 </body>
