@@ -8,10 +8,82 @@
         0 0 0 1px rgb(10 10 10 / 10%);
     padding: 1.25rem;
     color: #363636;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .titulo {
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.125;
+}
+
+.valor {
+    width: 50%;
+    text-align: left;
+    float: left;
+}
+
+.numero-recibo {
+    width: 50%;
+    text-align: right;
+    float: right;
+}
+
+.input-contratante {
+    width: 100%;
+}
+
+.input-referente-a {
+    width: 100%;
+}
+
+.cidade {
+    width: 50%;
+    text-align: left;
+    float: left;
+    margin-bottom: 1rem;
+}
+
+.data {
+    width: 50%;
+    text-align: right;
+    float: right;
+    margin-bottom: 1rem;
+}
+
+.nome-prestador-servico {
+    width: 100%;
+}
+
+.endereco {
+    width: 100%;
+}
+
+.numero {
+    width: 50%;
+    text-align: left;
+    float: left;
+}
+
+.bairro {
+    width: 50%;
+    text-align: right;
+    float: left;
+}
+
+.label-bairro {
+    width: 100%;
+}
+
+.cidade {
+    width: 50%;
+    text-align: left;
+    float: left;
+}
+
+.estado {
+    width: 25%;
+    text-align: right;
+    float: right;
 }
