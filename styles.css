@@ -18,13 +18,13 @@
     line-height: 1.125;
 }
 
-.valor {
+.column-valor {
     width: 50%;
     text-align: left;
     float: left;
 }
 
-.numero-recibo {
+.column-numero-recibo {
     width: 50%;
     text-align: right;
     float: right;
@@ -38,18 +38,16 @@
     width: 100%;
 }
 
-.cidade {
+.column-cidade {
     width: 50%;
     text-align: left;
     float: left;
-    margin-bottom: 1rem;
 }
 
-.data {
+.column-data {
     width: 50%;
     text-align: right;
     float: right;
-    margin-bottom: 1rem;
 }
 
 .nome-prestador-servico {
@@ -60,14 +58,14 @@
     width: 100%;
 }
 
-.numero {
-    width: 50%;
+.column-numero {
+    width: 25%;
     text-align: left;
     float: left;
 }
 
-.bairro {
-    width: 50%;
+.column-bairro {
+    width: 75%;
     text-align: right;
     float: left;
 }
@@ -76,14 +74,52 @@
     width: 100%;
 }
 
-.cidade {
+.column-cidade-estado-cep {
     width: 50%;
     text-align: left;
     float: left;
 }
 
-.estado {
+.column-estado {
+    width: 25%;
+    text-align: right;
+    float: left;
+}
+
+.colum-cep {
     width: 25%;
     text-align: right;
     float: right;
+}
+
+.colum-telefone {
+    width: 50%;
+    text-align: left;
+    float: left;
+
+}
+
+.colum-cpf-cnpj {
+    width: 50%;
+    text-align: right;
+    float: right;
+}
+
+.input-telefone {
+    width: 90%;
+}
+.input-cpf-cnpj {
+    width: 90%;
+}
+
+.input-cidade {
+    width: 90%;
+}
+
+.input-estado {
+    width: 83%;
+}
+
+.input-cep {
+    width: 83%;
 }

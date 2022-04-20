@@ -2,6 +2,7 @@
 <html lang="utf-8">
 
 <head>
+    <meta charset="UTF-8">
     <link rel="icon" href="assets/icone_pagina.svg">
     <link rel="stylesheet" href="styles.css">
     <title>Recibo de Prestação de Serviço</title>
@@ -11,21 +12,23 @@
     <div class="main">
         <h1 class="titulo">Recibo de Prestação de Serviço</h1>
 
-        <div class="valor">
-            <label class="label-valor">Valor:</label>
-            <div>
-                <input type="text" placeholder="00,00">
+        <div class="row-valor-numero-recibo">
+            <div class="column-valor">
+                <label class="label-valor">Valor:</label>
+                <div>
+                    <input type="text" placeholder="00,00">
+                </div>
+                <p>Valor recebido</p>
             </div>
-            <p>Valor recebido</p>
-        </div>
-        <div class="numero-recibo">
-            <label class="label-valor">Nº do recibo:(opcional)</label>
-            <div>
-                <input type="text">
+            <div class="column-numero-recibo">
+                <label class="label-valor">Nº do recibo:(opcional)</label>
+                <div>
+                    <input type="text">
+                </div>
+                <p>Ex.: 001/2018</p>
             </div>
-            <p>Ex.: 001/2018</p>
+            <div>
         </div>
-        <div>
             <label class="label-valor">Contratante</label>
             <div>
                 <input class="input-contratante" type="text">
@@ -44,16 +47,18 @@
                 <input class="input-referente-a" type="text">
             </div>
         </div>
-        <div class="cidade">
-            <label class="label-valor">Cidade:</label>
-            <div>
-                <input type="text">
+        <div class="row-cidade-data">
+            <div class="column-cidade">
+                <label class="label-valor">Cidade:</label>
+                <div>
+                    <input type="text">
+                </div>
             </div>
-        </div>
-        <div class="data">
-            <label class="label-valor">Data:</label>
-            <div>
-                <input type="text" placeholder="pegar a data do dia">
+            <div class="column-data">
+                <label class="label-valor">Data:</label>
+                <div>
+                    <input type="text" placeholder="pegar a data do dia">
+                </div>
             </div>
         </div>
         <hr>
@@ -71,75 +76,81 @@
                 <input class="endereco" type="text">
             </div>
         </div>
-        <div class="numero">
-            <label class="label-valor">Número:</label>
-            <div>
-                <input type="text">
+        <div class="row-numero-bairro">
+            <div class="column-numero">
+                <label class="label-valor">Número:</label>
+                <div>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="column-bairro">
+                <label class="label-valor">Bairro:</label>
+                <div>
+                    <input class="label-bairro" type="text">
+                </div>
             </div>
         </div>
-        <div class="bairro">
-            <label class="label-valor">Bairro:</label>
-            <div>
-                <input class="label-bairro" type="text">
+        <div class="row-cidade-estado-cep">
+            <div class="column-cidade-estado-cep">
+                <label class="label-valor">Cidade:</label>
+                <div>
+                    <input class="input-cidade" type="text">
+                </div>
+            </div>
+            <div class="column-estado">
+                <label class="label-valor">Estado:</label>
+                <div>
+                    <select class="input-estado" name="estado">
+                        <option selected="" value="">Selecione o Estado...</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+            </div>
+            <div class="colum-cep">
+                <label class="label-valor-cep">CEP:</label>
+                <div>
+                    <input class="input-cep" type="text" placeholder="00000-000">
+                </div>
             </div>
         </div>
-        <div class="cidade">
-            <label class="label-valor">Cidade:</label>
-            <div>
-                <input type="text">
+        <div class="row-telefone-cpf-cnpj">
+            <div class="colum-telefone">
+                <label class="label-valor">Telefone (opcional):</label>
+                <div>
+                    <input class="input-telefone" type="text">
+                </div>
             </div>
-        </div>
-        <div class="estado">
-            <label class="label-valor">Estado:</label>
-            <div>
-                <select name="estado">
-                    <option selected="" value="">Selecione o Estado...</option>
-                    <option value="AC">Acre</option>
-                    <option value="AL">Alagoas</option>
-                    <option value="AP">Amapá</option>
-                    <option value="AM">Amazonas</option>
-                    <option value="BA">Bahia</option>
-                    <option value="CE">Ceará</option>
-                    <option value="DF">Distrito Federal</option>
-                    <option value="ES">Espírito Santo</option>
-                    <option value="GO">Goiás</option>
-                    <option value="MA">Maranhão</option>
-                    <option value="MT">Mato Grosso</option>
-                    <option value="MS">Mato Grosso do Sul</option>
-                    <option value="MG">Minas Gerais</option>
-                    <option value="PA">Pará</option>
-                    <option value="PB">Paraíba</option>
-                    <option value="PR">Paraná</option>
-                    <option value="PE">Pernambuco</option>
-                    <option value="PI">Piauí</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="RN">Rio Grande do Norte</option>
-                    <option value="RS">Rio Grande do Sul</option>
-                    <option value="RO">Rondônia</option>
-                    <option value="RR">Roraima</option>
-                    <option value="SC">Santa Catarina</option>
-                    <option value="SP">São Paulo</option>
-                    <option value="SE">Sergipe</option>
-                    <option value="TO">Tocantins</option>
-                </select>
-            </div>
-        </div>
-        <div class="cep">
-            <label class="label-valor">CEP:</label>
-            <div>
-                <input type="text" placeholder="00000-000">
-            </div>
-        </div>
-        <div class="telefone">
-            <label class="label-valor">Telefone (opcional):</label>
-            <div>
-                <input type="text">
-            </div>
-        </div>
-        <div class="cpf-cnpj">
-            <label class="label-valor">CPF ou CNPJ (opcional):</label>
-            <div>
-                <input type="text">
+            <div class="colum-cpf-cnpj">
+                <label class="label-valor">CPF ou CNPJ (opcional):</label>
+                <div>
+                    <input class="input-cpf-cnpj" type="text">
+                </div>
             </div>
         </div>
         <div class="forma-pagamento">
