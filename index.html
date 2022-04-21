@@ -21,7 +21,7 @@
         <div class="column-numero-recibo">
             <h4 class="label-valor">Nº do recibo:(opcional)</h4>
             <input type="text">
-            <p class="help">Ex.: 001/2018</p>
+            <p class="help">Ex.: 001/2022</p>
         </div>
     </div>
     <div class="column-contratante">
@@ -44,7 +44,7 @@
         </div>
         <div class="column-data">
             <h4>Data:</h4>
-            <input class="input-data" type="text" required placeholder="pegar a data do dia">
+            <input class="input-data" type="text" id="placeholderSysDate" required>
         </div>
     </div>
     <hr>
@@ -108,7 +108,7 @@
         </div>
         <div class="column-cep">
             <h4>CEP:</h4>
-                <input class="input-cep" type="text" required placeholder="00000-000">
+            <input class="input-cep" type="text" required placeholder="00000-000">
         </div>
     </div>
     <div class="row">
@@ -155,7 +155,7 @@
         </label>
     </div>
     <div class="botao-gerar-recibo">
-        <input type="button" value="Gerar Recibo">
+        <input type="button" value="Gerar Recibo" onclick="gerarRecibo()">
     </div>
 </div>
 <script src="funcoes.js"></script>
