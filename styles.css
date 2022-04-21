@@ -12,12 +12,17 @@ hr {
 
 b {
     font-size: 1.5rem;
+    padding: 12px;
+}
+
+h4 {
+    margin: 0;
 }
 
 .main {
     border-radius: 6px;
     box-shadow: 0 2px 3px rgb(10 10 10 / 10%),
-        0 0 0 1px rgb(10 10 10 / 10%);
+    0 0 0 1px rgb(10 10 10 / 10%);
     padding: 1.25rem;
     color: #363636;
     width: 50%;
@@ -28,6 +33,7 @@ b {
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.125;
+    padding: 12px;
 }
 
 .row:after {
@@ -42,8 +48,7 @@ b {
     margin-top: 0.25rem;
 }
 
-.column-valor,
-.column-cidade {
+.column-valor {
     float: left;
     width: 185px;
     padding: 12px;
@@ -72,31 +77,43 @@ b {
     width: 98%;
 }
 
+.column-cpf-cnpj {
+    width: 400px;
+}
+
 .input-cpf-cnpj {
-    width: 185px;
+    width: 250px;
 }
 
 .column-numero {
     float: left;
-    width: 185px;
+    width: 210px;
     padding: 12px;
 }
 
+.input-numero {
+    width: 200px;
+}
+
 .column-bairro {
-    float: right;
-    width: 185px;
+    float: left;
+    width: 550px;
     padding: 12px;
+}
+
+.input-bairro {
+    width: 540px;
 }
 
 .column-cidade-prestador {
     float: left;
-    width: 185px;
+    width: 385px;
     padding: 12px;
 }
 
 .column-estado {
     float: left;
-    width: 185px;
+    width: 150px;
     padding: 12px;
 }
 
@@ -106,17 +123,28 @@ b {
     padding: 12px;
 }
 
-.input-cidade-prestador {}
+.input-cidade-prestador {
+}
 
-.colum-telefone {
+.column-telefone,
+.column-cidade {
     float: left;
-    width: 185px;
+    width: 380px;
     padding: 12px;
 }
 
-.column-cpf-cnpj-prestador {
+.input-telefone,
+.input-cpf-cnpj-prestador-servico,
+.input-cidade-prestador,
+.input-cidade,
+.input-data {
+    width: 365px;
+}
+
+.column-cpf-cnpj-prestador,
+.column-data {
     float: right;
-    width: 185px;
+    width: 380px;
     padding: 12px;
 }
 

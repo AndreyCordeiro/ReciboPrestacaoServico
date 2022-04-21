@@ -9,187 +9,156 @@
 </head>
 
 <body>
-    <div class="main">
-        <h1 class="titulo">Recibo de Prestação de Serviço</h1>
+<div class="main">
+    <h1 class="titulo">Recibo de Prestação de Serviço</h1>
 
-        <div class="row">
-            <div class="column-valor">
-                <label class="label-valor">Valor:</label>
-                <div>
-                    <input type="text" required placeholder="00,00">
-                </div>
-                <p class="help">Valor recebido</p>
-            </div>
-            <div class="column-numero-recibo">
-                <label class="label-valor">Nº do recibo:(opcional)</label>
-                <div>
-                    <input type="text">
-                </div>
-                <p class="help">Ex.: 001/2018</p>
-            </div>
+    <div class="row">
+        <div class="column-valor">
+            <h4 class="label-valor">Valor:</h4>
+            <input type="text" required placeholder="00,00">
+            <p class="help">Valor recebido</p>
         </div>
-        <div class="column-contratante">
-            <label>Contratante</label>
-            <div>
-                <input class="input-contratante" required type="text">
-            </div>
-        </div>
-        <div class="column-cpf-cnpj">
-            <label>CPF ou CNPJ (opcional):</label>
-            <div>
-                <input class="input-cpf-cnpj" type="text">
-            </div>
-            <p class="help">Somente números</p>
-        </div>
-        <div class="column-referente-a">
-            <label>Referente à:</label>
-            <div>
-                <input class="input-referente-a" required type="text">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-cidade">
-                <label>Cidade:</label>
-                <div>
-                    <input type="text" required>
-                </div>
-            </div>
-            <div class="column-data">
-                <label>Data:</label>
-                <div>
-                    <input type="text" required placeholder="pegar a data do dia">
-                </div>
-            </div>
-        </div>
-        <hr>
-        <b>DADOS DO PRESTADOR DE SERVIÇO</b>
-        <hr>
-        <div class="column-prestador-servico">
-            <label>Nome do Prestador de Serviço:</label>
-            <div>
-                <input class="input-prestador-servico" required type="text">
-            </div>
-        </div>
-        <div class="column-endereco">
-            <label>Endereço:</label>
-            <div>
-                <input class="input-endereco" required type="text">
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-numero">
-                <label>Número:</label>
-                <div>
-                    <input class="input-numero" required type="text">
-                </div>
-            </div>
-            <div class="column-bairro">
-                <label>Bairro:</label>
-                <div>
-                    <input class="input-bairro" required type="text">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-cidade-prestador">
-                <label>Cidade:</label>
-                <div>
-                    <input class="input-cidade-prestador" required type="text">
-                </div>
-            </div>
-            <div class="column-estado">
-                <label>Estado:</label>
-                <div>
-                    <select class="input-estado" required>
-                        <option selected="" value="">Selecione o Estado...</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
-            </div>
-            <div class="column-cep">
-                <label>CEP:</label>
-                <div>
-                    <input class="input-cep" type="text" required placeholder="00000-000">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="colum-telefone">
-                <label>Telefone (opcional):</label>
-                <div>
-                    <input class="input-telefone" type="text">
-                </div>
-            </div>
-            <div class="column-cpf-cnpj-prestador">
-                <label>CPF ou CNPJ (opcional):</label>
-                <div>
-                    <input class="input-cpf-cnpj" type="text">
-                </div>
-                <p class="help">Somente números</p>
-            </div>
-        </div>
-        <div class="column-forma-pagamento">
-            <label class="label-forma-pagamento">Forma de Pagamento:</label>
-            <div class="control">
-                <label class="radio">
-                    <input type="radio" name="pagamento" value="dinheiro" checked="">
-                    Dinheiro
-                </label>
-                <label class="radio">
-                    <input type="radio" name="pagamento" value="pix">
-                    Pix
-                </label>
-                <label class="radio">
-                    <input type="radio" name="pagamento" value="cheque">
-                    Cheque
-                </label>
-                <label class="radio">
-                    <input type="radio" name="pagamento" value="transferencia">
-                    Transferência/Depósito
-                </label>
-                <label class="radio">
-                    <input type="radio" name="pagamento" value="cartao">
-                    Cartão de Crédito/Débito
-                </label>
-            </div>
-        </div>
-        <div class="column-duas-vias">
-            <label class="label-duas-vias">Duas vias?</label>
-            <label class="checkbox">
-                <input type="checkbox" name="duasvias" id="duasvias">
-                Sim
-            </label>
-        </div>
-        <div class="botao-gerar-recibo">
-            <input type="button" value="Gerar Recibo">
+        <div class="column-numero-recibo">
+            <h4 class="label-valor">Nº do recibo:(opcional)</h4>
+            <input type="text">
+            <p class="help">Ex.: 001/2018</p>
         </div>
     </div>
+    <div class="column-contratante">
+        <h4>Contratante</h4>
+        <input class="input-contratante" required type="text">
+    </div>
+    <div class="column-cpf-cnpj">
+        <h4>CPF ou CNPJ (opcional):</h4>
+        <input class="input-cpf-cnpj" type="text">
+        <p class="help">Somente números</p>
+    </div>
+    <div class="column-referente-a">
+        <h4>Referente à:</h4>
+        <input class="input-referente-a" required type="text">
+    </div>
+    <div class="row">
+        <div class="column-cidade">
+            <h4>Cidade:</h4>
+            <input class="input-cidade" type="text" required>
+        </div>
+        <div class="column-data">
+            <h4>Data:</h4>
+            <input class="input-data" type="text" required placeholder="pegar a data do dia">
+        </div>
+    </div>
+    <hr>
+    <b>DADOS DO PRESTADOR DE SERVIÇO</b>
+    <hr>
+    <div class="column-prestador-servico">
+        <h4>Nome do Prestador de Serviço:</h4>
+        <input class="input-prestador-servico" required type="text">
+    </div>
+    <div class="column-endereco">
+        <h4>Endereço:</h4>
+        <input class="input-endereco" required type="text">
+    </div>
+    <div class="row">
+        <div class="column-numero">
+            <h4>Número:</h4>
+            <input class="input-numero" required type="text">
+        </div>
+        <div class="column-bairro">
+            <h4>Bairro:</h4>
+            <input class="input-bairro" required type="text">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column-cidade-prestador">
+            <h4>Cidade:</h4>
+            <input class="input-cidade-prestador" required type="text">
+        </div>
+        <div class="column-estado">
+            <h4>Estado:</h4>
+            <select class="input-estado" required>
+                <option selected="" value="">Selecione o Estado...</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        </div>
+        <div class="column-cep">
+            <h4>CEP:</h4>
+                <input class="input-cep" type="text" required placeholder="00000-000">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column-telefone">
+            <h4>Telefone (opcional):</h4>
+            <input class="input-telefone" type="text">
+        </div>
+        <div class="column-cpf-cnpj-prestador">
+            <h4>CPF ou CNPJ (opcional):</h4>
+            <input class="input-cpf-cnpj-prestador-servico" type="text">
+            <p class="help">Somente números</p>
+        </div>
+    </div>
+    <div class="column-forma-pagamento">
+        <h4 class="label-forma-pagamento">Forma de Pagamento:</h4>
+        <div class="control">
+            <label class="radio">
+                <input type="radio" name="pagamento" value="dinheiro" checked="">
+                Dinheiro
+            </label>
+            <label class="radio">
+                <input type="radio" name="pagamento" value="pix">
+                Pix
+            </label>
+            <label class="radio">
+                <input type="radio" name="pagamento" value="cheque">
+                Cheque
+            </label>
+            <label class="radio">
+                <input type="radio" name="pagamento" value="transferencia">
+                Transferência/Depósito
+            </label>
+            <label class="radio">
+                <input type="radio" name="pagamento" value="cartao">
+                Cartão de Crédito/Débito
+            </label>
+        </div>
+    </div>
+    <div class="column-duas-vias">
+        <h4 class="label-duas-vias">Duas vias?</h4>
+        <label class="checkbox">
+            <input type="checkbox" name="duasvias" id="duasvias">
+            Sim
+        </label>
+    </div>
+    <div class="botao-gerar-recibo">
+        <input type="button" value="Gerar Recibo">
+    </div>
+</div>
+<script src="funcoes.js"></script>
 </body>
 
 </html>
