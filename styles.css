@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
     color: #363636;
+    font-family: 'Roboto', sans-serif;
 }
 
 hr {
@@ -13,6 +16,7 @@ hr {
 b {
     font-size: 1.5rem;
     padding: 12px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
@@ -34,6 +38,7 @@ h4 {
     font-weight: 600;
     line-height: 1.125;
     padding: 12px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .row:after {
@@ -56,10 +61,14 @@ h4 {
 
 .input-valor {
     width: 170px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .input-numero-recibo {
     width: 170px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-numero-recibo,
@@ -83,6 +92,8 @@ h4 {
 .input-prestador-servico,
 .input-endereco {
     width: 770px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-cpf-cnpj {
@@ -91,6 +102,8 @@ h4 {
 
 .input-cpf-cnpj {
     width: 250px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-numero {
@@ -101,6 +114,8 @@ h4 {
 
 .input-numero {
     width: 200px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-bairro {
@@ -111,6 +126,8 @@ h4 {
 
 .input-bairro {
     width: 535px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-cidade-prestador {
@@ -127,6 +144,8 @@ h4 {
 
 .input-estado {
     width: 170px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-cep {
@@ -137,9 +156,8 @@ h4 {
 
 .input-cep {
     width: 170px;
-}
-
-.input-cidade-prestador {
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-telefone,
@@ -155,6 +173,8 @@ h4 {
 .input-cidade,
 .input-data {
     width: 365px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
 }
 
 .column-cpf-cnpj-prestador,
@@ -193,4 +213,34 @@ h4 {
 
 .botao-gerar-recibo {
     padding: 12px;
+}
+
+button {
+    cursor: pointer;
+    border: 2px solid #24b4fb;
+    background-color: #24b4fb;
+    border-radius: 0.9em;
+    padding: 0.8em 1.2em 0.8em 1em;
+    transition: all ease-in-out 0.2s;
+    font-size: 16px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: #0071e2;
 }
