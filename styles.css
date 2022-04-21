@@ -25,7 +25,7 @@ h4 {
     0 0 0 1px rgb(10 10 10 / 10%);
     padding: 1.25rem;
     color: #363636;
-    width: 50%;
+    width: 810px;
     margin: 0 auto;
 }
 
@@ -54,6 +54,14 @@ h4 {
     padding: 12px;
 }
 
+.input-valor {
+    width: 170px;
+}
+
+.input-numero-recibo {
+    width: 170px;
+}
+
 .column-numero-recibo,
 .column-data,
 .column-cep {
@@ -74,7 +82,7 @@ h4 {
 .input-referente-a,
 .input-prestador-servico,
 .input-endereco {
-    width: 98%;
+    width: 770px;
 }
 
 .column-cpf-cnpj {
@@ -102,7 +110,7 @@ h4 {
 }
 
 .input-bairro {
-    width: 540px;
+    width: 535px;
 }
 
 .column-cidade-prestador {
@@ -117,10 +125,18 @@ h4 {
     padding: 12px;
 }
 
+.input-estado {
+    width: 170px;
+}
+
 .column-cep {
     float: right;
     width: 185px;
     padding: 12px;
+}
+
+.input-cep {
+    width: 170px;
 }
 
 .input-cidade-prestador {
