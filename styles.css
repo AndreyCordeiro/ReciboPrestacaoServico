@@ -2,13 +2,25 @@
     color: #363636;
 }
 
+hr {
+    background-color: #f5f5f5;
+    border: none;
+    display: block;
+    height: 2px;
+    margin: 1.5rem 0;
+}
+
+b {
+    font-size: 1.5rem;
+}
+
 .main {
     border-radius: 6px;
     box-shadow: 0 2px 3px rgb(10 10 10 / 10%),
         0 0 0 1px rgb(10 10 10 / 10%);
     padding: 1.25rem;
     color: #363636;
-    width: 60%;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -18,108 +30,123 @@
     line-height: 1.125;
 }
 
-.column-valor {
-    width: 50%;
-    text-align: left;
-    float: left;
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.column-numero-recibo {
-    width: 50%;
-    text-align: right;
-    float: right;
+.help {
+    display: block;
+    font-size: .75rem;
+    margin-top: 0.25rem;
 }
 
-.input-contratante {
-    width: 100%;
-}
-
-.input-referente-a {
-    width: 100%;
-}
-
+.column-valor,
 .column-cidade {
-    width: 50%;
-    text-align: left;
     float: left;
+    width: 185px;
+    padding: 12px;
 }
 
-.column-data {
-    width: 50%;
-    text-align: right;
+.column-numero-recibo,
+.column-data,
+.column-cep {
     float: right;
+    width: 185px;
+    padding: 12px;
 }
 
-.nome-prestador-servico {
-    width: 100%;
+.column-contratante,
+.column-cpf-cnpj,
+.column-referente-a,
+.column-prestador-servico,
+.column-endereco {
+    padding: 12px;
 }
 
-.endereco {
-    width: 100%;
+.input-contratante,
+.input-referente-a,
+.input-prestador-servico,
+.input-endereco {
+    width: 98%;
+}
+
+.input-cpf-cnpj {
+    width: 185px;
 }
 
 .column-numero {
-    width: 25%;
-    text-align: left;
     float: left;
+    width: 185px;
+    padding: 12px;
 }
 
 .column-bairro {
-    width: 75%;
-    text-align: right;
-    float: left;
+    float: right;
+    width: 185px;
+    padding: 12px;
 }
 
-.label-bairro {
-    width: 100%;
-}
-
-.column-cidade-estado-cep {
-    width: 50%;
-    text-align: left;
+.column-cidade-prestador {
     float: left;
+    width: 185px;
+    padding: 12px;
 }
 
 .column-estado {
-    width: 25%;
-    text-align: right;
     float: left;
+    width: 185px;
+    padding: 12px;
 }
 
-.colum-cep {
-    width: 25%;
-    text-align: right;
+.column-cep {
     float: right;
+    width: 185px;
+    padding: 12px;
 }
+
+.input-cidade-prestador {}
 
 .colum-telefone {
-    width: 50%;
-    text-align: left;
     float: left;
-
+    width: 185px;
+    padding: 12px;
 }
 
-.colum-cpf-cnpj {
-    width: 50%;
-    text-align: right;
+.column-cpf-cnpj-prestador {
     float: right;
+    width: 185px;
+    padding: 12px;
 }
 
-.input-telefone {
-    width: 90%;
-}
-.input-cpf-cnpj {
-    width: 90%;
+.column-forma-pagamento {
+    margin-top: 20px;
+    margin-bottom: 12px;
 }
 
-.input-cidade {
-    width: 90%;
+.column-duas-vias {
+    margin-bottom: 12px;
 }
 
-.input-estado {
-    width: 83%;
+.label-forma-pagamento,
+.label-duas-vias {
+    margin-left: 8px;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-.input-cep {
-    width: 83%;
+.checkbox,
+.radio {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.25;
+    position: relative;
+    margin-left: 8px;
+}
+
+.botao-gerar-recibo {
+    padding: 12px;
 }
