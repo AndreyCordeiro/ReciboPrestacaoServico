@@ -50,7 +50,12 @@
             year = date.getFullYear();
             month = date.getMonth() + 1;
             day = date.getDate();
-            document.getElementById("placeholderSysDate").value = day + '/0' + month + '/' + year;</script>
+
+            if (month < 10) {
+                document.getElementById("placeholderSysDate").value = day + '/0' + month + '/' + year;
+            } else {
+                document.getElementById("placeholderSysDate").value = day + '/' + month + '/' + year;
+            }</script>
         </div>
     </div>
     <hr>
