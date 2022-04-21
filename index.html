@@ -15,7 +15,7 @@
     <div class="row">
         <div class="column-valor">
             <h4 class="label-valor">Valor:</h4>
-            <input type="text" required placeholder="00,00">
+            <input type="text" required placeholder="00,00" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
             <p class="help">Valor recebido</p>
         </div>
         <div class="column-numero-recibo">
@@ -30,7 +30,7 @@
     </div>
     <div class="column-cpf-cnpj">
         <h4>CPF ou CNPJ (opcional):</h4>
-        <input class="input-cpf-cnpj" type="text">
+        <input class="input-cpf-cnpj" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
         <p class="help">Somente números</p>
     </div>
     <div class="column-referente-a">
@@ -44,7 +44,13 @@
         </div>
         <div class="column-data">
             <h4>Data:</h4>
-            <input class="input-data" type="text" id="placeholderSysDate" required>
+            <input class="input-data" type="text" id="placeholderSysDate" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <script>
+            date = new Date();
+            year = date.getFullYear();
+            month = date.getMonth() + 1;
+            day = date.getDate();
+            document.getElementById("placeholderSysDate").value = day + '/0' + month + '/' + year;</script>
         </div>
     </div>
     <hr>
@@ -108,17 +114,17 @@
         </div>
         <div class="column-cep">
             <h4>CEP:</h4>
-            <input class="input-cep" type="text" required placeholder="00000-000">
+            <input class="input-cep" type="text" required placeholder="00000-000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
         </div>
     </div>
     <div class="row">
         <div class="column-telefone">
             <h4>Telefone (opcional):</h4>
-            <input class="input-telefone" type="text">
+            <input class="input-telefone" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
         </div>
         <div class="column-cpf-cnpj-prestador">
             <h4>CPF ou CNPJ (opcional):</h4>
-            <input class="input-cpf-cnpj-prestador-servico" type="text">
+            <input class="input-cpf-cnpj-prestador-servico" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
             <p class="help">Somente números</p>
         </div>
     </div>
