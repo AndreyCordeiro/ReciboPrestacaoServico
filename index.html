@@ -30,7 +30,7 @@
     </div>
     <div class="column-cpf-cnpj">
         <h4>CPF ou CNPJ (opcional):</h4>
-        <input class="input-cpf-cnpj" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+        <input class="input-cpf-cnpj" type="text" maxlength="18" name='cpfcnpj' onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
         <p class="help">Somente números</p>
     </div>
     <div class="column-referente-a">
@@ -124,7 +124,7 @@
         </div>
         <div class="column-cpf-cnpj-prestador">
             <h4>CPF ou CNPJ (opcional):</h4>
-            <input class="input-cpf-cnpj-prestador-servico" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <input class="input-cpf-cnpj-prestador-servico" type="text"  maxlength="18" name='cpfcnpj' onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
             <p class="help">Somente números</p>
         </div>
     </div>
@@ -165,6 +165,7 @@
     </div>
 </div>
 <script src="funcoes.js"></script>
+<script src="masks.js"></script>
 </body>
 
 </html>
