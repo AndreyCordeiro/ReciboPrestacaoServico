@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="icon" href="assets/icone_pagina.svg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="forma-pagamento.css">
     <link rel="stylesheet"
           href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
     <title>Recibo de Prestação de Serviço</title>
@@ -145,42 +146,107 @@
         <h4 class="label-forma-pagamento">Forma de Pagamento:</h4>
         <div class="control">
             <label class="radio">
-                <input type="radio" name="pagamento" value="dinheiro" checked="">
+                <input type="radio" name="pagamento" value="dinheiro" checked="" id="btn-dinheiro">
                 Dinheiro
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="pix">
+                <input type="radio" name="pagamento" value="pix" id="btn-pagamento-pix" onclick="menuPagamentoPix()">
                 Pix
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="cheque">
+                <input type="radio" name="pagamento" value="cheque" id="btn-pagamento-cheque">
                 Cheque
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="transferencia">
+                <input type="radio" name="pagamento" value="transferencia" id="btn-pagamento-transferencia-deposito">
                 Transferência/Depósito
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="cartao">
+                <input type="radio" name="pagamento" value="cartao" id="btn-cartao">
                 Cartão de Crédito/Débito
             </label>
         </div>
     </div>
-    <div class="column-duas-vias">
-        <h4 class="label-duas-vias">Duas vias?</h4>
-        <label class="checkbox">
-            <input type="checkbox" name="duasvias" id="duasvias">
-            Sim
-        </label>
+    <div class="row" id="pagamento-pix">
+        <div class="column-quem-recebeu">
+            <h4>Quem recebeu?</h4>
+            <input class="input-quem-recebeu" required type="text">
+        </div>
+        <div class="column-instituicao-banco">
+            <h4>Instituição/Banco:</h4>
+            <input class="input-instituicao-banco" required type="text">
+        </div>
+        <div class="column-chave">
+            <h4>Chave:</h4>
+            <input class="input-chave" type="text" required>
+        </div>
     </div>
-    <div class="botao-gerar-recibo">
-        <button>
+    <div class="row" id="pagamento-cheque">
+        <div class="column-numero-cheque">
+            <h4>Nº do Cheque:</h4>
+            <input class="input-numero-cheque" required type="text">
+        </div>
+        <div class="column-banco">
+            <h4>Banco:</h4>
+            <input class="input-banco" required type="text">
+        </div>
+        <div class="column-agencia">
+            <h4>Agência:</h4>
+            <input class="input-agencia" type="text" required>
+        </div>
+        <div class="column-bom-para">
+            <h4>Bom para...</h4>
+            <input class="input-bom-para" type="text" required placeholder="00/00/0000"
+                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <p class="help">Somente números</p>
+        </div>
+    </div>
+    <div class="row" id="pagamento-trans-dep-1">
+        <div class="column-conta">
+            <h4>Conta:</h4>
+            <input class="input-conta" required type="text">
+        </div>
+        <div class="column-agencia-td">
+            <h4>Agência:</h4>
+            <input class="input-agencia-td" required type="text">
+        </div>
+        <div class="column-data-td">
+            <h4>Data:</h4>
+            <input class="input-data-td" type="text" required placeholder="00/00/0000"
+                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+        </div>
+    </div>
+    <div class="row" id="pagamento-trans-dep-2">
+        <div class="column-banco-td">
+            <h4>Banco:</h4>
+            <input class="input-banco-td" type="text" required>
+        </div>
+        <div class="column-favorecido">
+            <h4>Favorecido:</h4>
+            <input class="input-favorecido" type="text" required>
+        </div>
+        <div class="column-numero-documento">
+            <h4>Nº do documento:</h4>
+            <input class="input-numero-documento" type="text" required>
+            <p class="help">(opicional)</p>
+        </div>
+    </div>
+</div>
+<div class="column-duas-vias">
+    <h4 class="label-duas-vias">Duas vias?</h4>
+    <label class="checkbox">
+        <input type="checkbox" name="duasvias" id="duasvias">
+        Sim
+    </label>
+</div>
+<div class="botao-gerar-recibo">
+    <button>
             <span class="material-symbols-outlined">
             description
             </span>
-            Gerar Recibo
-        </button>
-    </div>
+        Gerar Recibo
+    </button>
+</div>
 </div>
 <script src="funcoes.js"></script>
 <script src="masks.js"></script>

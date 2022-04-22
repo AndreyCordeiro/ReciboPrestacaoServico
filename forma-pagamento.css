@@ -1,0 +1,51 @@
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column-quem-recebeu,
+.column-instituicao-banco,
+.column-chave,
+.column-conta,
+.column-agencia-td,
+.column-data-td,
+.column-banco-td,
+.column-favorecido,
+.column-numero-documento {
+    float: left;
+    width: 245px;
+    padding: 12px;
+}
+
+.input-quem-recebeu,
+.input-instituicao-banco,
+.input-chave,
+.input-conta,
+.input-agencia-td,
+.input-data-td,
+.input-banco-td,
+.input-favorecido,
+.input-numero-documento {
+    width: 234px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
+}
+
+.column-numero-cheque,
+.column-banco,
+.column-agencia,
+.column-bom-para {
+    float: left;
+    width: 175px;
+    padding: 12px;
+}
+
+.input-numero-cheque,
+.input-banco,
+.input-agencia,
+.input-bom-para {
+    width: 175px;
+    border: 1.5px solid #23232e;
+    border-radius: 5px;
+}
