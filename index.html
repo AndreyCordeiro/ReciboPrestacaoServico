@@ -13,244 +13,248 @@
 
 <body>
 <div class="main">
-    <h1 class="titulo">Recibo de Prestação de Serviço</h1>
+    <form>
+        <h1 class="titulo">Recibo de Prestação de Serviço</h1>
 
-    <div class="row">
-        <div class="column-valor">
-            <h4 class="label-valor">Valor:</h4>
-            <input class="input-valor" type="text" required placeholder="00,00"
-                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-            <p class="help">Valor recebido</p>
+        <div class="row">
+            <div class="column-valor">
+                <h4 class="label-valor">Valor:</h4>
+                <input class="input-valor" id="valor-recibo" type="number" required placeholder="00,00" name="Valor">
+                <p class="help">Valor recebido</p>
+            </div>
+            <div class="column-numero-recibo">
+                <h4 class="label-valor">Nº do recibo:(opcional)</h4>
+                <input class="input-numero-recibo" type="number">
+                <p class="help">Ex.: 001/2022</p>
+            </div>
         </div>
-        <div class="column-numero-recibo">
-            <h4 class="label-valor">Nº do recibo:(opcional)</h4>
-            <input class="input-numero-recibo" type="text">
-            <p class="help">Ex.: 001/2022</p>
+        <div class="column-contratante">
+            <h4>Contratante</h4>
+            <input class="input-contratante" id="contratante" required type="text">
         </div>
-    </div>
-    <div class="column-contratante">
-        <h4>Contratante</h4>
-        <input class="input-contratante" required type="text">
-    </div>
-    <div class="column-cpf-cnpj">
-        <h4>CPF ou CNPJ (opcional):</h4>
-        <input class="input-cpf-cnpj" type="text" maxlength="18" name='cpfcnpj'
-               onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
-        <p class="help">Somente números</p>
-    </div>
-    <div class="column-referente-a">
-        <h4>Referente à:</h4>
-        <input class="input-referente-a" required type="text">
-    </div>
-    <div class="row">
-        <div class="column-cidade">
-            <h4>Cidade:</h4>
-            <input class="input-cidade" type="text" required>
-        </div>
-        <div class="column-data">
-            <h4>Data:</h4>
-            <input class="input-data" type="text" id="placeholderSysDate" required
-                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-            <script>
-                date = new Date();
-                year = date.getFullYear();
-                month = date.getMonth() + 1;
-                day = date.getDate();
-
-                if (month < 10) {
-                    document.getElementById("placeholderSysDate").value = day + '/0' + month + '/' + year;
-                } else {
-                    document.getElementById("placeholderSysDate").value = day + '/' + month + '/' + year;
-                }</script>
-        </div>
-    </div>
-    <hr>
-    <b>DADOS DO PRESTADOR DE SERVIÇO</b>
-    <hr>
-    <div class="column-prestador-servico">
-        <h4>Nome do Prestador de Serviço:</h4>
-        <input class="input-prestador-servico" required type="text">
-    </div>
-    <div class="column-endereco">
-        <h4>Endereço:</h4>
-        <input class="input-endereco" required type="text">
-    </div>
-    <div class="row">
-        <div class="column-numero">
-            <h4>Número:</h4>
-            <input class="input-numero" required type="text">
-        </div>
-        <div class="column-bairro">
-            <h4>Bairro:</h4>
-            <input class="input-bairro" required type="text">
-        </div>
-    </div>
-    <div class="row">
-        <div class="column-cidade-prestador">
-            <h4>Cidade:</h4>
-            <input class="input-cidade-prestador" required type="text">
-        </div>
-        <div class="column-estado">
-            <h4>Estado:</h4>
-            <select class="input-estado" required>
-                <option selected="" value="">Selecione o Estado...</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-            </select>
-        </div>
-        <div class="column-cep">
-            <h4>CEP:</h4>
-            <input class="input-cep" type="text" required placeholder="00000-000"
-                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-        </div>
-    </div>
-    <div class="row">
-        <div class="column-telefone">
-            <h4>Telefone (opcional):</h4>
-            <input class="input-telefone" type="text"
-                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-        </div>
-        <div class="column-cpf-cnpj-prestador">
+        <div class="column-cpf-cnpj">
             <h4>CPF ou CNPJ (opcional):</h4>
-            <input class="input-cpf-cnpj-prestador-servico" type="text" maxlength="18" name='cpfcnpj'
+            <input class="input-cpf-cnpj" type="text" maxlength="18" name='cpfcnpj'
                    onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
             <p class="help">Somente números</p>
         </div>
-    </div>
-    <div class="column-forma-pagamento">
-        <h4 class="label-forma-pagamento">Forma de Pagamento:</h4>
-        <div class="control">
-            <label class="radio">
-                <input type="radio" name="pagamento" value="dinheiro" checked="" id="btn-pagamento-dinheiro" onchange="menuPagamentoPix()">
-                Dinheiro
+        <div class="column-referente-a">
+            <h4>Referente à:</h4>
+            <input class="input-referente-a" id="recibo-referente-a" required type="text">
+        </div>
+        <div class="row">
+            <div class="column-cidade">
+                <h4>Cidade:</h4>
+                <input class="input-cidade" type="text" id="cidade" required>
+            </div>
+            <div class="column-data">
+                <h4>Data:</h4>
+                <input class="input-data" type="text" id="placeholderSysDate" required
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <script>
+                    date = new Date();
+                    year = date.getFullYear();
+                    month = date.getMonth() + 1;
+                    day = date.getDate();
+
+                    if (month < 10) {
+                        document.getElementById("placeholderSysDate").value = day + '/0' + month + '/' + year;
+                    } else {
+                        document.getElementById("placeholderSysDate").value = day + '/' + month + '/' + year;
+                    }</script>
+            </div>
+        </div>
+        <hr>
+        <b>DADOS DO PRESTADOR DE SERVIÇO</b>
+        <hr>
+        <div class="column-prestador-servico">
+            <h4>Nome do Prestador de Serviço:</h4>
+            <input class="input-prestador-servico" id="nome-ps" required type="text">
+        </div>
+        <div class="column-endereco">
+            <h4>Endereço:</h4>
+            <input class="input-endereco" id="endereco-ps" required type="text">
+        </div>
+        <div class="row">
+            <div class="column-numero">
+                <h4>Número:</h4>
+                <input class="input-numero" id="numero-ps" required type="number">
+            </div>
+            <div class="column-bairro">
+                <h4>Bairro:</h4>
+                <input class="input-bairro" id="bairro-ps" required type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column-cidade-prestador">
+                <h4>Cidade:</h4>
+                <input class="input-cidade-prestador" id="cidade-ps" required type="text">
+            </div>
+            <div class="column-estado">
+                <h4>Estado:</h4>
+                <select class="input-estado" id="estado-ps" required>
+                    <option selected="" value="">Selecione o Estado...</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+            <div class="column-cep">
+                <h4>CEP:</h4>
+                <input class="input-cep" type="text" id="cep-ps" required placeholder="00000-000"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            </div>
+        </div>
+        <div class="row">
+            <div class="column-telefone">
+                <h4>Telefone (opcional):</h4>
+                <input class="input-telefone" type="number">
+            </div>
+            <div class="column-cpf-cnpj-prestador">
+                <h4>CPF ou CNPJ (opcional):</h4>
+                <input class="input-cpf-cnpj-prestador-servico" type="text" maxlength="18" name='cpfcnpj'
+                       onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
+                <p class="help">Somente números</p>
+            </div>
+        </div>
+        <div class="column-forma-pagamento">
+            <h4 class="label-forma-pagamento">Forma de Pagamento:</h4>
+            <div class="control">
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="dinheiro" checked="" id="btn-pagamento-dinheiro"
+                           onchange="menuPagamentoPix()">
+                    Dinheiro
+                </label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="pix" id="btn-pagamento-pix"
+                           onchange="menuPagamentoPix()">
+                    Pix
+                </label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="cheque" id="btn-pagamento-cheque"
+                           onchange="menuPagamentoPix()">
+                    Cheque
+                </label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="transferencia" id="btn-pagamento-transferencia-deposito"
+                           onchange="menuPagamentoPix()">
+                    Transferência/Depósito
+                </label>
+                <label class="radio">
+                    <input type="radio" name="pagamento" value="cartao" id="btn-pagamento-cartao"
+                           onchange="menuPagamentoPix()">
+                    Cartão de Crédito/Débito
+                </label>
+            </div>
+        </div>
+        <div class="row" id="pagamento-pix">
+            <div class="column-quem-recebeu">
+                <h4>Quem recebeu?</h4>
+                <input class="input-quem-recebeu" id="quem-recebeu-fm" required type="text">
+            </div>
+            <div class="column-instituicao-banco">
+                <h4>Instituição/Banco:</h4>
+                <input class="input-instituicao-banco" id="instituicao-banco-fm" required type="text">
+            </div>
+            <div class="column-chave">
+                <h4>Chave:</h4>
+                <input class="input-chave" id="chave-fm" type="text" required>
+            </div>
+        </div>
+        <div class="row" id="pagamento-cheque">
+            <div class="column-numero-cheque">
+                <h4>Nº do Cheque:</h4>
+                <input class="input-numero-cheque" id="numero-cheque-fm" required type="number">
+            </div>
+            <div class="column-banco">
+                <h4>Banco:</h4>
+                <input class="input-banco" id="banco-fm" required type="text">
+            </div>
+            <div class="column-agencia">
+                <h4>Agência:</h4>
+                <input class="input-agencia" id="agencia-fm" type="number" required>
+            </div>
+            <div class="column-bom-para">
+                <h4>Bom para...</h4>
+                <input class="input-bom-para" id="bom-para-fm" type="text" required placeholder="00/00/0000"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <p class="help">Somente números</p>
+            </div>
+        </div>
+        <div class="row" id="pagamento-trans-dep-1">
+            <div class="column-conta">
+                <h4>Conta:</h4>
+                <input class="input-conta" id="conta-fm" required type="number">
+            </div>
+            <div class="column-agencia-td">
+                <h4>Agência:</h4>
+                <input class="input-agencia-td" id="agencia-trans-dep-fm" required type="number">
+            </div>
+            <div class="column-data-td">
+                <h4>Data:</h4>
+                <input class="input-data-td" id="data-trans-dep-fm" type="text" placeholder="00/00/0000"
+                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            </div>
+        </div>
+        <div class="row" id="pagamento-trans-dep-2">
+            <div class="column-banco-td">
+                <h4>Banco:</h4>
+                <input class="input-banco-td" type="text" required>
+            </div>
+            <div class="column-favorecido">
+                <h4>Favorecido:</h4>
+                <input class="input-favorecido" id="favorecido-fm" type="text" required>
+            </div>
+            <div class="column-numero-documento">
+                <h4>Nº do documento:</h4>
+                <input class="input-numero-documento" id="numerp-documento-fm" type="number">
+                <p class="help">(opicional)</p>
+            </div>
+        </div>
+        <div class="column-duas-vias">
+            <h4 class="label-duas-vias">Duas vias?</h4>
+            <label class="checkbox">
+                <input type="checkbox" name="duasvias" id="duasvias" onchange="duasVias()">
+                Sim
             </label>
-            <label class="radio">
-                <input type="radio" name="pagamento" value="pix" id="btn-pagamento-pix" onchange="menuPagamentoPix()">
-                Pix
-            </label>
-            <label class="radio">
-                <input type="radio" name="pagamento" value="cheque" id="btn-pagamento-cheque" onchange="menuPagamentoPix()">
-                Cheque
-            </label>
-            <label class="radio">
-                <input type="radio" name="pagamento" value="transferencia" id="btn-pagamento-transferencia-deposito" onchange="menuPagamentoPix()">
-                Transferência/Depósito
-            </label>
-            <label class="radio">
-                <input type="radio" name="pagamento" value="cartao" id="btn-pagamento-cartao" onchange="menuPagamentoPix()">
-                Cartão de Crédito/Débito
-            </label>
         </div>
-    </div>
-    <div class="row" id="pagamento-pix">
-        <div class="column-quem-recebeu">
-            <h4>Quem recebeu?</h4>
-            <input class="input-quem-recebeu" required type="text">
-        </div>
-        <div class="column-instituicao-banco">
-            <h4>Instituição/Banco:</h4>
-            <input class="input-instituicao-banco" required type="text">
-        </div>
-        <div class="column-chave">
-            <h4>Chave:</h4>
-            <input class="input-chave" type="text" required>
-        </div>
-    </div>
-    <div class="row" id="pagamento-cheque">
-        <div class="column-numero-cheque">
-            <h4>Nº do Cheque:</h4>
-            <input class="input-numero-cheque" required type="text">
-        </div>
-        <div class="column-banco">
-            <h4>Banco:</h4>
-            <input class="input-banco" required type="text">
-        </div>
-        <div class="column-agencia">
-            <h4>Agência:</h4>
-            <input class="input-agencia" type="text" required>
-        </div>
-        <div class="column-bom-para">
-            <h4>Bom para...</h4>
-            <input class="input-bom-para" type="text" required placeholder="00/00/0000"
-                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-            <p class="help">Somente números</p>
-        </div>
-    </div>
-    <div class="row" id="pagamento-trans-dep-1">
-        <div class="column-conta">
-            <h4>Conta:</h4>
-            <input class="input-conta" required type="text">
-        </div>
-        <div class="column-agencia-td">
-            <h4>Agência:</h4>
-            <input class="input-agencia-td" required type="text">
-        </div>
-        <div class="column-data-td">
-            <h4>Data:</h4>
-            <input class="input-data-td" type="text" placeholder="00/00/0000"
-                   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-        </div>
-    </div>
-    <div class="row" id="pagamento-trans-dep-2">
-        <div class="column-banco-td">
-            <h4>Banco:</h4>
-            <input class="input-banco-td" type="text" required>
-        </div>
-        <div class="column-favorecido">
-            <h4>Favorecido:</h4>
-            <input class="input-favorecido" type="text" required>
-        </div>
-        <div class="column-numero-documento">
-            <h4>Nº do documento:</h4>
-            <input class="input-numero-documento" type="text">
-            <p class="help">(opicional)</p>
-        </div>
-    </div>
-    <div class="column-duas-vias">
-        <h4 class="label-duas-vias">Duas vias?</h4>
-        <label class="checkbox">
-            <input type="checkbox" name="duasvias" id="duasvias" onchange="duasVias()">
-            Sim
-        </label>
-    </div>
-    <div class="botao-gerar-recibo">
-        <button>
+        <div class="botao-gerar-recibo">
+            <button onclick="gerarRecibo()">
             <span class="material-symbols-outlined">
             description
             </span>
-            Gerar Recibo
-        </button>
-    </div>
-</div>
+                Gerar Recibo
+            </button>
+        </div>
+    </form>
 </div>
 <script src="emisao-recibo.js"></script>
 <script src="mascaras-form.js"></script>
-<script src="funcoes-formas-pagamentos.js.js"></script>
+<script src="funcoes-formas-pagamentos.js"></script>
 </body>
 
 </html>
