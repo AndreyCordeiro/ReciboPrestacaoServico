@@ -46,15 +46,3 @@ function menuPagamentoPix() {
 
 //Chamo a função para ser executada ao abrir o site
 menuPagamentoPix();
-
-function duasVias() {
-    let duasVias = document.getElementById('duasvias');
-
-    if (duasVias.checked) {
-        //fazer emitir duas vias do recibo
-    }
-}
-
-function gerarRecibo() {
-
-}
