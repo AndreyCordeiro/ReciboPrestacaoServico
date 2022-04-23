@@ -146,23 +146,23 @@
         <h4 class="label-forma-pagamento">Forma de Pagamento:</h4>
         <div class="control">
             <label class="radio">
-                <input type="radio" name="pagamento" value="dinheiro" checked="" id="btn-dinheiro">
+                <input type="radio" name="pagamento" value="dinheiro" checked="" id="btn-pagamento-dinheiro" onchange="menuPagamentoPix()">
                 Dinheiro
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="pix" id="btn-pagamento-pix" onclick="menuPagamentoPix()">
+                <input type="radio" name="pagamento" value="pix" id="btn-pagamento-pix" onchange="menuPagamentoPix()">
                 Pix
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="cheque" id="btn-pagamento-cheque">
+                <input type="radio" name="pagamento" value="cheque" id="btn-pagamento-cheque" onchange="menuPagamentoPix()">
                 Cheque
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="transferencia" id="btn-pagamento-transferencia-deposito">
+                <input type="radio" name="pagamento" value="transferencia" id="btn-pagamento-transferencia-deposito" onchange="menuPagamentoPix()">
                 Transferência/Depósito
             </label>
             <label class="radio">
-                <input type="radio" name="pagamento" value="cartao" id="btn-cartao">
+                <input type="radio" name="pagamento" value="cartao" id="btn-pagamento-cartao" onchange="menuPagamentoPix()">
                 Cartão de Crédito/Débito
             </label>
         </div>
@@ -212,7 +212,7 @@
         </div>
         <div class="column-data-td">
             <h4>Data:</h4>
-            <input class="input-data-td" type="text" required placeholder="00/00/0000"
+            <input class="input-data-td" type="text" placeholder="00/00/0000"
                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
         </div>
     </div>
@@ -227,25 +227,25 @@
         </div>
         <div class="column-numero-documento">
             <h4>Nº do documento:</h4>
-            <input class="input-numero-documento" type="text" required>
+            <input class="input-numero-documento" type="text">
             <p class="help">(opicional)</p>
         </div>
     </div>
-</div>
-<div class="column-duas-vias">
-    <h4 class="label-duas-vias">Duas vias?</h4>
-    <label class="checkbox">
-        <input type="checkbox" name="duasvias" id="duasvias">
-        Sim
-    </label>
-</div>
-<div class="botao-gerar-recibo">
-    <button>
+    <div class="column-duas-vias">
+        <h4 class="label-duas-vias">Duas vias?</h4>
+        <label class="checkbox">
+            <input type="checkbox" name="duasvias" id="duasvias" onchange="duasVias()">
+            Sim
+        </label>
+    </div>
+    <div class="botao-gerar-recibo">
+        <button>
             <span class="material-symbols-outlined">
             description
             </span>
-        Gerar Recibo
-    </button>
+            Gerar Recibo
+        </button>
+    </div>
 </div>
 </div>
 <script src="funcoes.js"></script>
