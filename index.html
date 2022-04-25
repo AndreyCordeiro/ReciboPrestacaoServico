@@ -51,8 +51,7 @@
             </div>
             <div class="column-data">
                 <h4>Data:</h4>
-                <input class="input-data" type="text" id="placeholderSysDate" required
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <input class="input-data" type="text" id="placeholderSysDate" required maxlength="10">
                 <script>
                     date = new Date();
                     year = date.getFullYear();
@@ -203,8 +202,7 @@
             </div>
             <div class="column-bom-para">
                 <h4>Bom para...</h4>
-                <input class="input-bom-para" id="bom-para-fm" type="text" required placeholder="00/00/0000"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <input class="input-bom-para" id="bom-para-fm" type="text" required placeholder="00/00/0000" maxlength="10">
                 <p class="help">Somente números</p>
             </div>
         </div>
@@ -219,8 +217,7 @@
             </div>
             <div class="column-data-td">
                 <h4>Data:</h4>
-                <input class="input-data-td" id="data-trans-dep-fm" type="text" placeholder="00/00/0000"
-                       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                <input class="input-data-td"  maxlength="10" id="data-trans-dep-fm" type="text" placeholder="00/00/0000">
             </div>
         </div>
         <div class="row" id="pagamento-trans-dep-2">
