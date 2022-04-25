@@ -8,6 +8,7 @@ function execmascara() {
     v_obj.value = v_fun(v_obj.value)
 }
 
+//Máscara do campo CPF/CNPJ
 function cpfCnpj(v) {
     //Remove tudo o que não é dígito
     v = v.replace(/\D/g, "")
@@ -105,7 +106,7 @@ function addZero() {
 campoInput.addEventListener("keyup", formatarMoeda);
 campoInput.addEventListener("blur", addZero);
 
-//Máscara do campo telefone
+//Máscara do campo Telefone
 const phone = document.getElementById('numero-prestador');
 phone.addEventListener('input', function (e) {
     let arr = this.value.replace(/[^\dA-Z]/g, '').replace(/[\s-)(]/g, '').split('');
@@ -113,4 +114,17 @@ phone.addEventListener('input', function (e) {
     if (arr.length > 3) arr.splice(3, 0, ') ');
     if (arr.length > 9) arr.splice(9, 0, '-');
     this.value = arr.toString().replace(/[,]/g, '');
+});
+
+//Máscara do campo CEP
+const inputValue = document.querySelector("#cep-ps");
+let zipCode = "";
+
+inputValue.addEventListener("keyup", () => {
+    zipCode = inputValue.value;
+    if (zipCode)
+        if (zipCode.length === 8) {
+            inputValue.value = `${zipCode.substr(0, 5)}-${zipCode.substr(5, 9)}`;
+            console.log(zipCode);
+        }
 });
