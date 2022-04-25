@@ -32,7 +32,8 @@ function gerarRecibo() {
     let cpfCnpjCliente = document.getElementById('cpf-cnpj-cliente').value;
     let valorTotalRecibo = document.getElementById('valor-recibo').value;
     let referenteA = document.getElementById('recibo-referente-a').value;
-    let cidadePrestador = document.getElementById('cidade-ps').value;
+    let nomePrestador = document.getElementById('nome-ps').value;
+    let cidadeCliente = document.getElementById('cidade').value;
     let dataRecibo = document.getElementById('placeholderSysDate').value;
     let estadoPrestador = document.getElementById('estado-ps').value;
     let endereco = document.getElementById('endereco-ps').value;
@@ -63,8 +64,8 @@ function gerarRecibo() {
         document.getElementById('valor-total-dinheiro').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-dinheiro').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
             ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
-        document.getElementById('cidade-data-servico-dinheiro').innerHTML = cidadePrestador + ", " + dataRecibo;
-        document.getElementById('estado-view-dinheiro').innerHTML = estadoPrestador;
+        document.getElementById('cidade-data-servico-dinheiro').innerHTML = cidadeCliente + ", " + dataRecibo;
+        document.getElementById('prestador-view-dinheiro').innerHTML = nomePrestador;
         document.getElementById('info-endereco-dinheiro').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " +
             cep + ", " + cidade + " - " + estadoPrestador;
         document.getElementById('cpf-cnpj-view-dinheiro').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
@@ -77,8 +78,8 @@ function gerarRecibo() {
         document.getElementById('conteudo-principal-pix').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
             ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-pix").innerHTML = "Pagamento recebido por: " + quemRecebeu + " - chave pix: " + chavePix + " - " + instituicaoPix;
-        document.getElementById('cidade-data-servico-pix').innerHTML = cidadePrestador + ", " + dataRecibo;
-        document.getElementById('estado-view-pix').innerHTML = estadoPrestador;
+        document.getElementById('cidade-data-servico-pix').innerHTML = cidadeCliente + ", " + dataRecibo;
+        document.getElementById('prestador-view-pix').innerHTML = nomePrestador;
         document.getElementById('info-endereco-pix').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " +
             cep + ", " + cidade + " - " + estadoPrestador;
         document.getElementById('cpf-cnpj-view-pix').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
@@ -93,8 +94,8 @@ function gerarRecibo() {
         document.getElementById("dynamic-field-1-cheque").innerHTML = "O Pagamento foi efetuado através do cheque n°: " + numeroCheque + " do Banco: " + banco + ", Agência: " + agencia;
         document.getElementById("dynamic-field-2-cheque").innerHTML = "Para todos os fins de direito, a validade do presente Recibo fica condicionada ao recebimento do cheque acima identificado.";
         document.getElementById("dynamic-field-3-cheque").innerHTML = "Cheque bom para: " + chequeBomPara;
-        document.getElementById('cidade-data-servico-cheque').innerHTML = cidadePrestador + ", " + dataRecibo;
-        document.getElementById('estado-view-cheque').innerHTML = estadoPrestador;
+        document.getElementById('cidade-data-servico-cheque').innerHTML = cidadeCliente + ", " + dataRecibo;
+        document.getElementById('prestador-view-cheque').innerHTML = nomePrestador;
         document.getElementById('info-endereco-cheque').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " +
             cep + ", " + cidade + " - " + estadoPrestador;
         document.getElementById('cpf-cnpj-view-cheque').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
@@ -108,8 +109,8 @@ function gerarRecibo() {
             ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-1-trans-dep").innerHTML = "O Pagamento foi efetuado através do depósito/Transferência bancário realizado em " + dataFm + ", na conta: " + contaFm + ", agência: " + agenciaFm + ", banco : " + bancoFmTd + ". Favorecido: " + favorecidoFm + ".";
         document.getElementById("dynamic-field-2-trans-dep").innerHTML = "Número do documento: " + numeroDocumentoFmTd;
-        document.getElementById('cidade-data-servico-trans-dep').innerHTML = cidadePrestador + ", " + dataRecibo;
-        document.getElementById('estado-view-trans-dep').innerHTML = estadoPrestador;
+        document.getElementById('cidade-data-servico-trans-dep').innerHTML = cidadeCliente + ", " + dataRecibo;
+        document.getElementById('prestador-view-trans-dep').innerHTML = nomePrestador;
         document.getElementById('info-endereco-trans-dep').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " + cep + ", " + cidade + " - " + estadoPrestador;
         document.getElementById('cpf-cnpj-view-trans-dep').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
         document.getElementById('numero-telefone-trans-dep').innerHTML = numeroPrestador;
@@ -121,8 +122,8 @@ function gerarRecibo() {
         document.getElementById('conteudo-principal-cartao').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
             ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-1-cartao").innerHTML = "Pagamento efetuado através de Cartão de Crédito/Débito.";
-        document.getElementById('cidade-data-servico-cartao').innerHTML = cidadePrestador + ", " + dataRecibo;
-        document.getElementById('estado-view-cartao').innerHTML = estadoPrestador;
+        document.getElementById('cidade-data-servico-cartao').innerHTML = cidadeCliente + ", " + dataRecibo;
+        document.getElementById('prestador-view-cartao').innerHTML = nomePrestador;
         document.getElementById('info-endereco-cartao').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " + cep + ", " + cidade + " - " + estadoPrestador;
         document.getElementById('cpf-cnpj-view-cartao').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
         document.getElementById('numero-telefone-cartao').innerHTML = numeroPrestador;
