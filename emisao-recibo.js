@@ -64,7 +64,7 @@ function gerarRecibo() {
         document.getElementById('conteudo-principal-dinheiro').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
             ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
         document.getElementById('cidade-data-servico-dinheiro').innerHTML = cidadePrestador + ", " + dataRecibo;
-        document.getElementById('estado-view-dinheiro').innerHTML = "estadoPrestador.value";
+        document.getElementById('estado-view-dinheiro').innerHTML = estadoPrestador;
         document.getElementById('info-endereco-dinheiro').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " +
             cep + ", " + cidade + " - " + estadoPrestador;
         document.getElementById('cpf-cnpj-view-dinheiro').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
@@ -120,7 +120,7 @@ function gerarRecibo() {
         document.getElementById('valor-total-cartao').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-cartao').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
             ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
-        document.getElementById("dynamic-field-1-cartao").innerHTML = "Pagamento efetuado através de Cartão de Crédito/Débito";
+        document.getElementById("dynamic-field-1-cartao").innerHTML = "Pagamento efetuado através de Cartão de Crédito/Débito.";
         document.getElementById('cidade-data-servico-cartao').innerHTML = cidadePrestador + ", " + dataRecibo;
         document.getElementById('estado-view-cartao').innerHTML = estadoPrestador;
         document.getElementById('info-endereco-cartao').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " + cep + ", " + cidade + " - " + estadoPrestador;
