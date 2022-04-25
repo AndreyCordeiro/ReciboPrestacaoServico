@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    color: #363636;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    margin: 0;
+}
+
+.view-recibo {
+    border-radius: 6px;
+    box-shadow: 0 2px 3px rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 10%);
+    padding: 1.25rem;
+    color: #363636;
+    width: 1250px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tittle {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+    padding: 12px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.numero-recibo,
+.valor-total-recibo,
+.cidade-data-servico {
+    float: right;
+    width: 150px;
+    padding: 5px;
+}
+
+.estado {
+    text-align: center;
+}
+
+.borda-assinatura {
+    border-top: 1px solid #999;
+    margin: auto;
+    display: block;
+    width: 30%;
+}
+span {
+    font-style: inherit;
+    font-weight: inherit;
+}

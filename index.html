@@ -6,6 +6,7 @@
     <link rel="icon" href="assets/icone_pagina.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="forma-pagamento.css">
+    <link rel="stylesheet" href="view-recibo.css">
     <link rel="stylesheet"
           href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
     <title>Recibo de Prestação de Serviço</title>
@@ -24,7 +25,7 @@
             </div>
             <div class="column-numero-recibo">
                 <h4 class="label-valor">Nº do recibo:(opcional)</h4>
-                <input class="input-numero-recibo" type="number">
+                <input class="input-numero-recibo" id="numero-recibo" type="number">
                 <p class="help">Ex.: 001/2022</p>
             </div>
         </div>
@@ -34,7 +35,7 @@
         </div>
         <div class="column-cpf-cnpj">
             <h4>CPF ou CNPJ (opcional):</h4>
-            <input class="input-cpf-cnpj" type="text" maxlength="18" name='cpfcnpj'
+            <input class="input-cpf-cnpj" id="cpf-cnpj-cliente" type="text" maxlength="18" name='cpfcnpj'
                    onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
             <p class="help">Somente números</p>
         </div>
@@ -132,11 +133,12 @@
         <div class="row">
             <div class="column-telefone">
                 <h4>Telefone (opcional):</h4>
-                <input class="input-telefone" type="number">
+                <input class="input-telefone" id="numero-prestador" type="number">
             </div>
             <div class="column-cpf-cnpj-prestador">
                 <h4>CPF ou CNPJ (opcional):</h4>
-                <input class="input-cpf-cnpj-prestador-servico" type="text" maxlength="18" name='cpfcnpj'
+                <input class="input-cpf-cnpj-prestador-servico" id="cpf-cnpj-prestador" type="text" maxlength="18"
+                       name='cpfcnpj'
                        onkeypress='mascaraMutuario(this,cpfCnpj)' onblur='clearTimeout()'>
                 <p class="help">Somente números</p>
             </div>
@@ -231,7 +233,7 @@
             </div>
             <div class="column-numero-documento">
                 <h4>Nº do documento:</h4>
-                <input class="input-numero-documento" type="number">
+                <input class="input-numero-documento" id="numero-doc-fm-td" type="number">
                 <p class="help">(opicional)</p>
             </div>
         </div>
@@ -251,6 +253,208 @@
             </button>
         </div>
     </form>
+</div>
+<div class="view-recibo" id="view-recibo-dinheiro">
+    <h2 class="tittle">Recibo de Prestação de Serviço</h2>
+    <div class="row">
+        <div class="numero-recibo">
+            <p id="numero-recibo-dinheiro"></p>
+            <p id="valor-total-dinheiro"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="main-contend">
+            <p id="conteudo-principal-dinheiro"></p>
+            <p>Para maior clareza firmo(amos) o presente recibo para que produza os seus efeitos, dando plena, rasa e
+                irrevogável quitação, pelo valor recebido.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cidade-data-servico">
+            <p id="cidade-data-servico-dinheiro"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="estado">
+            <span class="borda-assinatura">
+                <p id="estado-view-dinheiro"></p>
+            </span>
+            <p id="info-endereco-dinheiro"></p>
+            <p id="cpf-cnpj-view-dinheiro"></p>
+            <p id="numero-telefone-view-dinheiro"></p>
+        </div>
+    </div>
+    <div class="botao-gerar-recibo">
+        <button onclick="imprimir()">
+            <span class="material-symbols-outlined">
+            print
+            </span>
+            Imprimir
+        </button>
+    </div>
+</div>
+<div class="view-recibo" id="view-recibo-pix">
+    <h2 class="tittle">Recibo de Prestação de Serviço</h2>
+    <div class="row">
+        <div class="numero-recibo">
+            <p id="numero-recibo-pix"></p>
+            <p id="valor-total-pix"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="main-contend">
+            <p id="conteudo-principal-pix"></p>
+            <p>Para maior clareza firmo(amos) o presente recibo para que produza os seus efeitos, dando plena, rasa e
+                irrevogável quitação, pelo valor recebido.</p>
+            <p id="dynamic-field-pix">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cidade-data-servico">
+            <p id="cidade-data-servico-pix"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="estado">
+            <span class="borda-assinatura">
+                <p id="estado-view-pix"></p>
+            </span>
+            <p id="info-endereco-pix"></p>
+            <p id="cpf-cnpj-view-pix"></p>
+            <p id="numero-telefone-view-pix"></p>
+        </div>
+    </div>
+    <div class="botao-gerar-recibo">
+        <button onclick="imprimir()">
+            <span class="material-symbols-outlined">
+            print
+            </span>
+            Imprimir
+        </button>
+    </div>
+</div>
+<div class="view-recibo" id="view-recibo-cheque">
+    <h2 class="tittle">Recibo de Prestação de Serviço</h2>
+    <div class="row">
+        <div class="numero-recibo">
+            <p id="numero-recibo-resultado-cheque"></p>
+            <p id="valor-total-resultado-cheque"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="main-contend">
+            <p id="conteudo-principal-cheque"></p>
+            <p>Para maior clareza firmo(amos) o presente recibo para que produza os seus efeitos, dando plena, rasa e
+                irrevogável quitação, pelo valor recebido.</p>
+            <p id="dynamic-field-1-cheque">
+            <p id="dynamic-field-2-cheque">
+            <p id="dynamic-field-3-cheque">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cidade-data-servico">
+            <p id="cidade-data-servico-cheque"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="estado">
+            <span class="borda-assinatura">
+                <p id="estado-view-cheque"></p>
+            </span>
+            <p id="info-endereco-cheque"></p>
+            <p id="cpf-cnpj-view-cheque"></p>
+            <p id="numero-telefone-view-cheque"></p>
+        </div>
+    </div>
+    <div class="botao-gerar-recibo">
+        <button onclick="imprimir()">
+            <span class="material-symbols-outlined">
+            print
+            </span>
+            Imprimir
+        </button>
+    </div>
+</div>
+<div class="view-recibo" id="view-recibo-trans-dep">
+    <h2 class="tittle">Recibo de Prestação de Serviço</h2>
+    <div class="row">
+        <div class="numero-recibo">
+            <p id="numero-recibo-trans-dep"></p>
+            <p id="valor-total-trans-dep"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="main-contend">
+            <p id="conteudo-principal-trans-dep"></p>
+            <p>Para maior clareza firmo(amos) o presente recibo para que produza os seus efeitos, dando plena, rasa e
+                irrevogável quitação, pelo valor recebido.</p>
+            <p id="dynamic-field-1-trans-dep">
+            <p id="dynamic-field-2-trans-dep">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cidade-data-servico">
+            <p id="cidade-data-servico-trans-dep"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="estado">
+            <span class="borda-assinatura">
+                <p id="estado-view-trans-dep"></p>
+            </span>
+            <p id="info-endereco-trans-dep"></p>
+            <p id="cpf-cnpj-view-trans-dep"></p>
+            <p id="numero-telefone-view-trans-dep"></p>
+        </div>
+    </div>
+    <div class="botao-gerar-recibo">
+        <button onclick="imprimir()">
+            <span class="material-symbols-outlined">
+            print
+            </span>
+            Imprimir
+        </button>
+    </div>
+</div>
+<div class="view-recibo" id="view-recibo-cartao">
+    <h2 class="tittle">Recibo de Prestação de Serviço</h2>
+    <div class="row">
+        <div class="numero-recibo">
+            <p id="numero-recibocartao"></p>
+            <p id="valor-total-cartao"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="main-contend">
+            <p id="conteudo-principal-cartao"></p>
+            <p>Para maior clareza firmo(amos) o presente recibo para que produza os seus efeitos, dando plena, rasa e
+                irrevogável quitação, pelo valor recebido.</p>
+            <p id="dynamic-field-1-cartao">
+        </div>
+    </div>
+    <div class="row">
+        <div class="cidade-data-servico">
+            <p id="cidade-data-servico-cartao"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="estado">
+            <span class="borda-assinatura">
+                <p id="estado-view-cartao"></p>
+            </span>
+            <p id="info-endereco-cartao"></p>
+            <p id="cpf-cnpj-view-cartao"></p>
+            <p id="numero-telefone-view-cartao"></p>
+        </div>
+    </div>
+    <div class="botao-gerar-recibo">
+        <button onclick="imprimir()">
+            <span class="material-symbols-outlined">
+            print
+            </span>
+            Imprimir
+        </button>
+    </div>
 </div>
 <script src="emisao-recibo.js"></script>
 <script src="mascaras-form.js"></script>
