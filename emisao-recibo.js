@@ -140,72 +140,72 @@ function requiredInputs() {
 
     //Acessando somente os campos obrigatórios das formas de pagamento
     //Dados da Forma de Pagamento Pix
-    let quemRecebeuFm = document.getElementById('quem-recebeu-fm');
-    let instituicaoBancoFm = document.getElementById('instituicao-banco-fm');
-    let chaveFm = document.getElementById('chave-fm');
+    let quemRecebeuFmReq = document.getElementById('quem-recebeu-fm');
+    let instituicaoBancoFmReq = document.getElementById('instituicao-banco-fm');
+    let chaveFmReq = document.getElementById('chave-fm');
 
     //Dados da Forma de Pagamento Cheque
-    let numeroChequeFm = document.getElementById('numero-cheque-fm');
-    let bancoFm = document.getElementById('banco-fm');
-    let agenciaFm = document.getElementById('agencia-fm');
-    let bomParaFm = document.getElementById('bom-para-fm');
+    let numeroChequeFmReq = document.getElementById('numero-cheque-fm');
+    let bancoFmReq = document.getElementById('banco-fm');
+    let agenciaFmReq = document.getElementById('agencia-fm');
+    let bomParaFmReq = document.getElementById('bom-para-fm');
 
     // //Dados da Forma de Pagamento Transferencia/Depósito
-    let contaFm = document.getElementById('conta-fm');
-    let agenciaTransDepFm = document.getElementById('agencia-trans-dep-fm');
-    let bancoFmTd = document.getElementById('banco-fm-td');
-    let favorecidoFm = document.getElementById('favorecido-fm');
+    let contaFmReq = document.getElementById('conta-fm');
+    let agenciaTransDepFmReq = document.getElementById('agencia-trans-dep-fm');
+    let bancoFmTdReq = document.getElementById('banco-fm-td');
+    let favorecidoFmReq = document.getElementById('favorecido-fm');
 
     if (pagDinheiro.checked || pagCartao.checked) {
         //Pix
-        quemRecebeuFm.removeAttribute("required");
-        instituicaoBancoFm.removeAttribute("required");
-        chaveFm.removeAttribute("required");
+        quemRecebeuFmReq.removeAttribute("required");
+        instituicaoBancoFmReq.removeAttribute("required");
+        chaveFmReq.removeAttribute("required");
 
         //Cheque
-        numeroChequeFm.removeAttribute("required");
-        bancoFm.removeAttribute("required");
-        agenciaFm.removeAttribute("required");
-        bomParaFm.removeAttribute("required");
+        numeroChequeFmReq.removeAttribute("required");
+        bancoFmReq.removeAttribute("required");
+        agenciaFmReq.removeAttribute("required");
+        bomParaFmReq.removeAttribute("required");
 
         //Transferencia/Depósito
-        contaFm.removeAttribute("required");
-        agenciaTransDepFm.removeAttribute("required");
-        bancoFmTd.removeAttribute("required");
-        favorecidoFm.removeAttribute("required");
+        contaFmReq.removeAttribute("required");
+        agenciaTransDepFmReq.removeAttribute("required");
+        bancoFmTdReq.removeAttribute("required");
+        favorecidoFmReq.removeAttribute("required");
     } else if (pagPix.checked) {
         //Cheque
-        numeroChequeFm.removeAttribute("required");
-        bancoFm.removeAttribute("required");
-        agenciaFm.removeAttribute("required");
-        bomParaFm.removeAttribute("required");
+        numeroChequeFmReq.removeAttribute("required");
+        bancoFmReq.removeAttribute("required");
+        agenciaFmReq.removeAttribute("required");
+        bomParaFmReq.removeAttribute("required");
 
         //Transferencia/Depósito
-        contaFm.removeAttribute("required");
-        agenciaTransDepFm.removeAttribute("required");
-        bancoFmTd.removeAttribute("required");
-        favorecidoFm.removeAttribute("required");
+        contaFmReq.removeAttribute("required");
+        agenciaTransDepFmReq.removeAttribute("required");
+        bancoFmTdReq.removeAttribute("required");
+        favorecidoFmReq.removeAttribute("required");
     } else if (pagCheque.checked) {
         //Pix
-        quemRecebeuFm.removeAttribute("required");
-        instituicaoBancoFm.removeAttribute("required");
-        chaveFm.removeAttribute("required");
+        quemRecebeuFmReq.removeAttribute("required");
+        instituicaoBancoFmReq.removeAttribute("required");
+        chaveFmReq.removeAttribute("required");
 
         //Transferencia/Depósito
-        contaFm.removeAttribute("required");
-        agenciaTransDepFm.removeAttribute("required");
-        bancoFmTd.removeAttribute("required");
-        favorecidoFm.removeAttribute("required");
+        contaFmReq.removeAttribute("required");
+        agenciaTransDepFmReq.removeAttribute("required");
+        bancoFmTdReq.removeAttribute("required");
+        favorecidoFmReq.removeAttribute("required");
     } else if (pagTransDep.checked) {
         //Pix
-        quemRecebeuFm.removeAttribute("required");
-        instituicaoBancoFm.removeAttribute("required");
-        chaveFm.removeAttribute("required");
+        quemRecebeuFmReq.removeAttribute("required");
+        instituicaoBancoFmReq.removeAttribute("required");
+        chaveFmReq.removeAttribute("required");
 
         //Cheque
-        numeroChequeFm.removeAttribute("required");
-        bancoFm.removeAttribute("required");
-        agenciaFm.removeAttribute("required");
-        bomParaFm.removeAttribute("required");
+        numeroChequeFmReq.removeAttribute("required");
+        bancoFmReq.removeAttribute("required");
+        agenciaFmReq.removeAttribute("required");
+        bomParaFmReq.removeAttribute("required");
     }
 }
