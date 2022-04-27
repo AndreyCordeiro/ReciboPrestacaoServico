@@ -12,11 +12,46 @@ function menuPagamentoPix() {
     let pagTransDep = document.getElementById('btn-pagamento-transferencia-deposito');
     let pagCartao = document.getElementById('btn-pagamento-cartao');
 
+    //Acessando somente os campos obrigatórios das formas de pagamento
+    //Dados da Forma de Pagamento Pix
+    let quemRecebeuFmReq = document.getElementById('quem-recebeu-fm');
+    let instituicaoBancoFmReq = document.getElementById('instituicao-banco-fm');
+    let chaveFmReq = document.getElementById('chave-fm');
+
+    //Dados da Forma de Pagamento Cheque
+    let numeroChequeFmReq = document.getElementById('numero-cheque-fm');
+    let bancoFmReq = document.getElementById('banco-fm');
+    let agenciaFmReq = document.getElementById('agencia-fm');
+    let bomParaFmReq = document.getElementById('bom-para-fm');
+
+    // //Dados da Forma de Pagamento Transferencia/Depósito
+    let contaFmReq = document.getElementById('conta-fm');
+    let agenciaTransDepFmReq = document.getElementById('agencia-trans-dep-fm');
+    let bancoFmTdReq = document.getElementById('banco-fm-td');
+    let favorecidoFmReq = document.getElementById('favorecido-fm');
+
     if (pagDinheiro.checked || pagCartao.checked) {
         divPix.hidden = true;
         divCheque.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
+
+        //Pix
+        quemRecebeuFmReq.removeAttribute("required");
+        instituicaoBancoFmReq.removeAttribute("required");
+        chaveFmReq.removeAttribute("required");
+
+        //Cheque
+        numeroChequeFmReq.removeAttribute("required");
+        bancoFmReq.removeAttribute("required");
+        agenciaFmReq.removeAttribute("required");
+        bomParaFmReq.removeAttribute("required");
+
+        //Transferencia/Depósito
+        contaFmReq.removeAttribute("required");
+        agenciaTransDepFmReq.removeAttribute("required");
+        bancoFmTdReq.removeAttribute("required");
+        favorecidoFmReq.removeAttribute("required");
     } else if (pagPix.checked) {
         //Mostrar opção selecionada
         divPix.hidden = false;
@@ -25,6 +60,18 @@ function menuPagamentoPix() {
         divCheque.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
+
+        //Cheque
+        numeroChequeFmReq.removeAttribute("required");
+        bancoFmReq.removeAttribute("required");
+        agenciaFmReq.removeAttribute("required");
+        bomParaFmReq.removeAttribute("required");
+
+        //Transferencia/Depósito
+        contaFmReq.removeAttribute("required");
+        agenciaTransDepFmReq.removeAttribute("required");
+        bancoFmTdReq.removeAttribute("required");
+        favorecidoFmReq.removeAttribute("required");
     } else if (pagCheque.checked) {
         //Mostrar opção selecionada
         divCheque.hidden = false;
@@ -33,6 +80,17 @@ function menuPagamentoPix() {
         divPix.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
+
+        //Pix
+        quemRecebeuFmReq.removeAttribute("required");
+        instituicaoBancoFmReq.removeAttribute("required");
+        chaveFmReq.removeAttribute("required");
+
+        //Transferencia/Depósito
+        contaFmReq.removeAttribute("required");
+        agenciaTransDepFmReq.removeAttribute("required");
+        bancoFmTdReq.removeAttribute("required");
+        favorecidoFmReq.removeAttribute("required");
     } else if (pagTransDep.checked) {
         //Mostrar opção selecionada
         divTransDep1.hidden = false;
@@ -41,6 +99,17 @@ function menuPagamentoPix() {
         //Esconder as demais
         divPix.hidden = true;
         divCheque.hidden = true;
+        
+        //Pix
+        quemRecebeuFmReq.removeAttribute("required");
+        instituicaoBancoFmReq.removeAttribute("required");
+        chaveFmReq.removeAttribute("required");
+
+        //Cheque
+        numeroChequeFmReq.removeAttribute("required");
+        bancoFmReq.removeAttribute("required");
+        agenciaFmReq.removeAttribute("required");
+        bomParaFmReq.removeAttribute("required");
     }
 }
 
