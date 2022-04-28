@@ -16,6 +16,7 @@ document.getElementById('view-recibo-pix').style.display = "none";
 document.getElementById('view-recibo-trans-dep').style.display = "none";
 document.getElementById('view-recibo-cartao').style.display = "none";
 
+// https://stackoverflow.com/questions/22514597/submit-form-only-if-all-required-fields-are-full
 function gerarRecibo() {
     document.getElementById('main').style.display = "none";
 

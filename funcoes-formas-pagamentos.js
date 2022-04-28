@@ -35,23 +35,6 @@ function menuPagamentoPix() {
         divCheque.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
-
-        //Pix
-        quemRecebeuFmReq.removeAttribute("required");
-        instituicaoBancoFmReq.removeAttribute("required");
-        chaveFmReq.removeAttribute("required");
-
-        //Cheque
-        numeroChequeFmReq.removeAttribute("required");
-        bancoFmReq.removeAttribute("required");
-        agenciaFmReq.removeAttribute("required");
-        bomParaFmReq.removeAttribute("required");
-
-        //Transferencia/Depósito
-        contaFmReq.removeAttribute("required");
-        agenciaTransDepFmReq.removeAttribute("required");
-        bancoFmTdReq.removeAttribute("required");
-        favorecidoFmReq.removeAttribute("required");
     } else if (pagPix.checked) {
         //Mostrar opção selecionada
         divPix.hidden = false;
@@ -60,18 +43,6 @@ function menuPagamentoPix() {
         divCheque.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
-
-        //Cheque
-        numeroChequeFmReq.removeAttribute("required");
-        bancoFmReq.removeAttribute("required");
-        agenciaFmReq.removeAttribute("required");
-        bomParaFmReq.removeAttribute("required");
-
-        //Transferencia/Depósito
-        contaFmReq.removeAttribute("required");
-        agenciaTransDepFmReq.removeAttribute("required");
-        bancoFmTdReq.removeAttribute("required");
-        favorecidoFmReq.removeAttribute("required");
     } else if (pagCheque.checked) {
         //Mostrar opção selecionada
         divCheque.hidden = false;
@@ -80,17 +51,6 @@ function menuPagamentoPix() {
         divPix.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
-
-        //Pix
-        quemRecebeuFmReq.removeAttribute("required");
-        instituicaoBancoFmReq.removeAttribute("required");
-        chaveFmReq.removeAttribute("required");
-
-        //Transferencia/Depósito
-        contaFmReq.removeAttribute("required");
-        agenciaTransDepFmReq.removeAttribute("required");
-        bancoFmTdReq.removeAttribute("required");
-        favorecidoFmReq.removeAttribute("required");
     } else if (pagTransDep.checked) {
         //Mostrar opção selecionada
         divTransDep1.hidden = false;
@@ -99,17 +59,6 @@ function menuPagamentoPix() {
         //Esconder as demais
         divPix.hidden = true;
         divCheque.hidden = true;
-        
-        //Pix
-        quemRecebeuFmReq.removeAttribute("required");
-        instituicaoBancoFmReq.removeAttribute("required");
-        chaveFmReq.removeAttribute("required");
-
-        //Cheque
-        numeroChequeFmReq.removeAttribute("required");
-        bancoFmReq.removeAttribute("required");
-        agenciaFmReq.removeAttribute("required");
-        bomParaFmReq.removeAttribute("required");
     }
 }
 
