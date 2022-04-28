@@ -1,7 +1,10 @@
-.label-valor {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap');
+
+h4 {
     color: #363636;
     display: block;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
+    font-family: 'Nunito', sans-serif;
 }
