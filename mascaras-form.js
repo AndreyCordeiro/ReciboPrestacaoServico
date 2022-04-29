@@ -73,25 +73,25 @@ dateInputMask(input2);
 dateInputMask(input3);
 
 
-var campoInput = document.getElementById("valor-recibo");
-//Máscara do campo Valor do Recibo
-function formatarMoeda() {
-    let valor = campoInput.value;
-
-    if (campoInput.value.length > 2) {
-        valor = parseInt(valor.replace(/[\D]+/g, ""));
-        valor = valor + "";
-
-        valor = valor.replace(/([0-9]{2})$/g, ",$1");
-
-        campoInput.value = valor;
-        if (valor == "NaN") campoInput.value = "";
-
-        if (campoInput.value.charAt(0) == ",") {
-            campoInput.value = "0" + campoInput.value;
-        }
-    }
-}
+// const campoInput = document.getElementById("valor-recibo");
+// //Máscara do campo Valor do Recibo
+// function formatarMoeda() {
+//     let valor = campoInput.value;
+//
+//     if (campoInput.value.length > 2) {
+//         valor = parseInt(valor.replace(/[\D]+/g, ""));
+//         valor = valor + "";
+//
+//         valor = valor.replace(/([0-9]{2})$/g, ",$1");
+//
+//         campoInput.value = valor;
+//         if (valor == "NaN") campoInput.value = "";
+//
+//         if (campoInput.value.charAt(0) == ",") {
+//             campoInput.value = "0" + campoInput.value;
+//         }
+//     }
+// }
 
 function addZero() {
     if (campoInput.value.length < 3 && campoInput.value.charAt(0) !== ",") {
@@ -103,8 +103,8 @@ function addZero() {
     }
 }
 
-campoInput.addEventListener("keyup", formatarMoeda);
-campoInput.addEventListener("blur", addZero);
+// campoInput.addEventListener("keyup", formatarMoeda);
+// campoInput.addEventListener("blur", addZero);
 
 //Máscara do campo Telefone
 const phone = document.getElementById('numero-prestador');

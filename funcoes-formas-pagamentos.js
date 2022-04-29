@@ -31,11 +31,13 @@ function menuPagamentoPix() {
     let favorecidoFmReq = document.getElementById('favorecido-fm');
 
     if (pagDinheiro.checked || pagCartao.checked) {
+        requiredInputs('DINHEIRO');
         divPix.hidden = true;
         divCheque.hidden = true;
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
     } else if (pagPix.checked) {
+        requiredInputs('PIX');
         //Mostrar opção selecionada
         divPix.hidden = false;
 
@@ -44,6 +46,7 @@ function menuPagamentoPix() {
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
     } else if (pagCheque.checked) {
+        requiredInputs('CHEQUE');
         //Mostrar opção selecionada
         divCheque.hidden = false;
 
@@ -52,6 +55,7 @@ function menuPagamentoPix() {
         divTransDep1.hidden = true;
         divTransDep2.hidden = true;
     } else if (pagTransDep.checked) {
+        requiredInputs('DEPOSITO');
         //Mostrar opção selecionada
         divTransDep1.hidden = false;
         divTransDep2.hidden = false;
