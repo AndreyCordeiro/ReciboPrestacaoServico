@@ -64,7 +64,7 @@ function gerarRecibo() {
         document.getElementById('numero-recibo-dinheiro').innerHTML = "Nº: " + numeroRecibo;
         document.getElementById('valor-total-dinheiro').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-dinheiro').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
-            ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
+            ", a importância de " + valorTotalRecibo.extenso() + " referente à " + referenteA + ".";
         document.getElementById('cidade-data-servico-dinheiro').innerHTML = cidadeCliente + ", " + dataRecibo;
         document.getElementById('prestador-view-dinheiro').innerHTML = nomePrestador;
         document.getElementById('info-endereco-dinheiro').innerHTML = endereco + ", " + numeroCasa + ", " + bairro + " - CEP " +
@@ -77,7 +77,7 @@ function gerarRecibo() {
         document.getElementById('numero-recibo-pix').innerHTML = "Nº: " + numeroRecibo;
         document.getElementById('valor-total-pix').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-pix').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
-            ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
+            ", a importância de " + valorTotalRecibo.extenso() + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-pix").innerHTML = "Pagamento recebido por: " + quemRecebeu + " - chave pix: " + chavePix + " - " + instituicaoPix;
         document.getElementById('cidade-data-servico-pix').innerHTML = cidadeCliente + ", " + dataRecibo;
         document.getElementById('prestador-view-pix').innerHTML = nomePrestador;
@@ -91,7 +91,7 @@ function gerarRecibo() {
         document.getElementById('numero-recibo-resultado-cheque').innerHTML = "Nº: " + numeroRecibo;
         document.getElementById('valor-total-resultado-cheque').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-cheque').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
-            ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
+            ", a importância de " + valorTotalRecibo.extenso() + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-1-cheque").innerHTML = "O Pagamento foi efetuado através do cheque n°: " + numeroCheque + " do Banco: " + banco + ", Agência: " + agencia;
         document.getElementById("dynamic-field-2-cheque").innerHTML = "Para todos os fins de direito, a validade do presente Recibo fica condicionada ao recebimento do cheque acima identificado.";
         document.getElementById("dynamic-field-3-cheque").innerHTML = "Cheque bom para: " + chequeBomPara;
@@ -107,7 +107,7 @@ function gerarRecibo() {
         document.getElementById('numero-recibo-trans-dep').innerHTML = "Nº: " + numeroRecibo;
         document.getElementById('valor-total-trans-dep').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-trans-dep').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
-            ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
+            ", a importância de " + valorTotalRecibo.extenso() + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-1-trans-dep").innerHTML = "O Pagamento foi efetuado através do depósito/Transferência bancário realizado em " + dataFm + ", na conta: " + contaFm + ", agência: " + agenciaFm + ", banco : " + bancoFmTd + ". Favorecido: " + favorecidoFm + ".";
         document.getElementById("dynamic-field-2-trans-dep").innerHTML = "Número do documento: " + numeroDocumentoFmTd;
         document.getElementById('cidade-data-servico-trans-dep').innerHTML = cidadeCliente + ", " + dataRecibo;
@@ -121,7 +121,7 @@ function gerarRecibo() {
         document.getElementById('numero-recibocartao').innerHTML = "Nº: " + numeroRecibo;
         document.getElementById('valor-total-cartao').innerHTML = "R$ " + valorTotalRecibo + "#";
         document.getElementById('conteudo-principal-cartao').innerHTML = "Recebi(emos) de " + contratante + " - CPF/CNPJ nº " + cpfCnpjCliente +
-            ", a importância de " + valorTotalRecibo + " referente à " + referenteA + ".";
+            ", a importância de " + valorTotalRecibo.extenso() + " referente à " + referenteA + ".";
         document.getElementById("dynamic-field-1-cartao").innerHTML = "Pagamento efetuado através de Cartão de Crédito/Débito.";
         document.getElementById('cidade-data-servico-cartao').innerHTML = cidadeCliente + ", " + dataRecibo;
         document.getElementById('prestador-view-cartao').innerHTML = nomePrestador;
@@ -129,6 +129,30 @@ function gerarRecibo() {
         document.getElementById('cpf-cnpj-view-cartao').innerHTML = "CPF/CNPJ: " + cpfCnpjPrestador;
         document.getElementById('numero-telefone-cartao').innerHTML = numeroPrestador;
     }
+}
+
+String.prototype.extenso = function(c){
+    var ex = [
+        ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"],
+        ["dez", "vinte", "trinta", "quarenta", "cinqüenta", "sessenta", "setenta", "oitenta", "noventa"],
+        ["cem", "cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"],
+        ["mil", "milhão", "bilhão", "trilhão", "quadrilhão", "quintilhão", "sextilhão", "setilhão", "octilhão", "nonilhão", "decilhão", "undecilhão", "dodecilhão", "tredecilhão", "quatrodecilhão", "quindecilhão", "sedecilhão", "septendecilhão", "octencilhão", "nonencilhão"]
+    ];
+    var a, n, v, i, n = this.replace(c ? /[^,\d]/g : /\D/g, "").split(","), e = " e ", $ = "real", d = "centavo", sl;
+    for(var f = n.length - 1, l, j = -1, r = [], s = [], t = ""; ++j <= f; s = []){
+        j && (n[j] = (("." + n[j]) * 1).toFixed(2).slice(2));
+        if(!(a = (v = n[j]).slice((l = v.length) % 3).match(/\d{3}/g), v = l % 3 ? [v.slice(0, l % 3)] : [], v = a ? v.concat(a) : v).length) continue;
+        for(a = -1, l = v.length; ++a < l; t = ""){
+            if(!(i = v[a] * 1)) continue;
+            i % 100 < 20 && (t += ex[0][i % 100]) ||
+            i % 100 + 1 && (t += ex[1][(i % 100 / 10 >> 0) - 1] + (i % 10 ? e + ex[0][i % 10] : ""));
+            s.push((i < 100 ? t : !(i % 100) ? ex[2][i == 100 ? 0 : i / 100 >> 0] : (ex[2][i / 100 >> 0] + e + t)) +
+                ((t = l - a - 2) > -1 ? " " + (i > 1 && t > 0 ? ex[3][t].replace("ão", "ões") : ex[3][t]) : ""));
+        }
+        a = ((sl = s.length) > 1 ? (a = s.pop(), s.join(" ") + e + a) : s.join("") || ((!j && (n[j + 1] * 1 > 0) || r.length) ? "" : ex[0][0]));
+        a && r.push(a + (c ? (" " + (v.join("") * 1 > 1 ? j ? d + "s" : (/0{6,}$/.test(n[0]) ? "de " : "") + $.replace("l", "is") : j ? d : $)) : ""));
+    }
+    return r.join(e);
 }
 
 function requiredInputs() {
